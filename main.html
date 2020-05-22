@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+  <title>WeUI</title>
+  <link rel="stylesheet" href="./assets/css/weui.css"/>
+  <link rel="stylesheet" href="./assets/css/example.css"/>
+</head>
+<body ontouchstart>
+  <div id="app">
+    <div class="weui-toptips weui-toptips_warn js_tooltips">{{err_msg}}</div>
+    <div class="container" id="container">
+      <div class="page flex js_show">
+        <div class="page__db page__bd_spacing" style="height: 100%;">
+          <div class="weui-tab">
+            <div class="page__hd">
+              <h1 class="page__title">
+                <img src="./assets/images/logo.png" alt="WeUI" height="21px" />
+              </h1>
+              <p class="page__desc">WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+            </div>
+            <div class="weui-tab__panel">
+              <div class="weui-grids">
+                <a href="javascript:void(0)" class="weui-grid" :class="grids.size==12?'weui-grid-12':''"
+                    @click="show_grid_info(item)"
+                    v-for="(item, index) in grids.items" :key="index">
+                  <div class="weui-grid__icon">
+                    <img src="./assets/images/avatar.png" alt="">
+                  </div>
+                  <p class="weui-grid__label">{{item}}</p>
+                  <span class="weui-dadge" 
+                      style="position: absolute; right: 5px; bottom: -2px;" 
+                      @click.stop="edit_grid_info(item)"
+                      v-if="can_edit">e</span>
+                </a><!-- weui-grid -->
+              </div><!-- weui-grids -->
+              <div class="weui-flex">
+                <div class="weui-flex__item">
+                </div>
+              </div><!-- weui-flex -->
+              <div class="weui-flex">
+                <div class="weui-flex__item">
+                  <div class="placeholder">col-6</div>
+                </div>
+                <div class="weui-flex__item">
+                  <div style="position: relative;">
+                    <div class="placeholder">col-6</div>
+                    <span class="weui-dadge" style="position: absolute; right: 10px; bottom: -2px;">e</span>
+                  </div>
+                </div>
+              </div>
+              <div class="weui-flex">
+                <div class="weui-flex__item">
+                  <div class="placeholder">col-4</div>
+                </div>
+                <div class="weui-flex__item">
+                  <div class="placeholder">col-4</div>
+                </div>
+                <div class="weui-flex__item">
+                  <div class="placeholder">col-4</div>
+                </div>
+              </div>
+              <div class="weui-flex">
+                <div class="weui-flex__item">
+                  <div class="placeholder">col-3</div>
+                </div>
+                <div class="weui-flex__item">
+                  <div class="placeholder">col-3</div>
+                </div>
+                <div class="weui-flex__item">
+                  <div class="placeholder">col-3</div>
+                </div>
+                <div class="weui-flex__item">
+                  <div class="placeholder">col-3</div>
+                </div>
+              </div>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+             <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</p>
+            </div>
+            <div class="weui-tabbar">
+              <div class="weui-tabbar__item" :class="menu.cur_menu=='catalog'?'weui-bar__item_on':''" @click="click_menu('catalog')">
+                <div style="display: inline-block; position: relative;">
+                  <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                  <span class="weui-badge" style="position: absolute; top: -2px; right: -13px;">8</span>
+                </div>
+                <p class="weui-tabbar__label">{{menu.catalog}}</p>
+              </div>
+              <div class="weui-tabbar__item" :class="menu.cur_menu=='address'?'weui-bar__item_on':''" @click="click_menu('address')">
+                <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                <p class="weui-tabbar__label">通讯录</p>
+              </div>
+              <div class="weui-tabbar__item">
+                <div style="display: inline-block; position: relative;">
+                  <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                  <span class="weui-badge weui-badge_dot" style="position: absolute; top: 0; right: -6px;"></span>
+                </div>
+                <p class="weui-tabbar__label">发现</p>
+              </div>
+              <div class="weui-tabbar__item">
+                <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                <p class="weui-tabbar__label">我</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="./assets/js/zepto.min.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="https://res.wx.qq.com/open/libs/weuijs/1.2.1/weui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="./assets/js/i18n.js"></script>
+<script>
+  $(function() {
+    i18n.translator.add({
+      values:{
+        "Hello": "こんにちは",
+        "Catalog": "カタログ",
+      }
+    });
+    let app = new Vue({
+      el: '#app',
+      data: {
+        can_edit: true,
+        err_msg: i18n("Hello"),
+        menu: {
+          cur_menu: 'catalog',
+          catalog: i18n("Catalog"),
+          address: '通讯录',
+        },
+        grids: {
+          size: 12,
+          items: ['Grid1','Grid2','Grid3','Grid4','Grid5','Grid6']}
+      },
+      methods: {
+        click_menu: function(cur_menu) {
+          let vm = this;
+          vm.menu.cur_menu = cur_menu;
+        },
+        edit_grid_info: function(grid) {
+          console.log('edit_grid_info:', grid);
+        },
+        show_grid_info: function(grid) {
+          console.log('show_grid_info:', grid);
+        }
+      }
+    });
+    //  Then translate something
+    console.log(i18n("Hello"));  // -> こんにちは
+  });
+</script>
+</body>
+</html>
