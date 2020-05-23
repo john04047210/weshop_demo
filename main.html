@@ -140,10 +140,12 @@
     </div>
   </div>
 <script src="./assets/js/zepto.min.js"></script>
-<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
 <script src="https://res.wx.qq.com/open/libs/weuijs/1.2.1/weui.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
 <script src="./assets/js/i18n.js"></script>
+<script src="./assets/js/hashes.js"></script>
 <script>
   $(function() {
     i18n.translator.add({
@@ -152,11 +154,21 @@
         "Catalog": "カタログ",
       }
     });
+    let app_id = 'wxb4dc1e6c1d807494';
+    let app_secret = '9fab2bc312d83594b97bc4bada908896';
+    let noncestr = 'f709f950b583af000d8d7d7f4b0db414';
+    let cur_page_url = 'http://wepy.shilikaif.com/mall/main.html';
     let app = new Vue({
       el: '#app',
       data: {
         can_edit: true,
-        err_msg: i18n("Hello"),
+        err_msg: '',
+        wx_token2: {
+          access_token: '33_dnyE_K0V5d1XiAnnNJV90ZTp1JeSZidCqx5Mj9SqNSUT_tO4w0Dcy1RPcxwhipnwBuGsW7tEbzfcDQQnFNQjaU838Qj5cg4tVX7cRTC7zwLulJXlMURgE6YqEy1Nf9PkvBNetbwIPH-CYemZLJKcAFAYWX',
+          create_time: moment().unix(),
+          jsapi_ticket: 'kgt8ON7yVITDhtdwci0qeXItvJZZlO_pAh0et0zwZfH3rOGQg0AghFis2zpddSYfodr_ALVQpEJJOOm8HVqflQ',
+        },
+        wx_token: null,
         menu: {
           cur_menu: 'catalog',
           catalog: i18n("Catalog"),
@@ -164,7 +176,8 @@
         },
         grids: {
           size: 12,
-          items: ['Grid1','Grid2','Grid3','Grid4','Grid5','Grid6']}
+          items: ['Grid1','Grid2','Grid3','Grid4','Grid5','Grid6']
+        }
       },
       methods: {
         click_menu: function(cur_menu) {
@@ -176,7 +189,72 @@
         },
         show_grid_info: function(grid) {
           console.log('show_grid_info:', grid);
+        },
+        make_signature: function(timestamp) {
+          let vm = this;
+          let plain_str = `jsapi_ticket=${vm.wx_token.jsapi_ticket}&noncestr=${noncestr}&timestamp=${timestamp}&url=${cur_page_url}`;
+          let SHA1 = new Hashes.SHA1
+          SHA1.setUTF8(false);    // 可以设置是否为utf8
+          let signature = SHA1.hex(plain_str);
+          return signature;
+        },
+        getTokenStorage: function() {
+          let vm = this;
+          let token_str = localStorage.getItem('wx_token');
+          if (token_str && token_str.length > 0) {
+            vm.wx_token = JSON.parse(token_str);
+          } else {
+            vm.wx_token = {
+              access_token: '',
+              create_time: 0,
+              jsapi_ticket: '',
+            };
+          }
+          let cur_timestamp = moment().unix();
+          if (cur_timestamp - vm.wx_token.create_time > 7200) {
+            $.ajax({
+              type: 'GET',
+              async: false,
+              url: 'http://wepy.shilikaif.com/api/token', 
+              data: {
+                with_ticket: 1
+              },
+              headers: {APPID: app_id},
+              dataType: 'json', 
+              success: function(res){
+                console.log(res);
+                if (res.code === 0) {
+                  vm.wx_token.access_token = res.data.access_token;
+                  vm.wx_token.create_time = res.data.create_time;
+                  vm.wx_token.jsapi_ticket = res.data.jsapi_ticket;
+                } else {
+                  console.log('get token error:', res.msg);
+                  vm.err_msg = res.msg;
+                }
+              },
+              error: function(xhr, errorType, error) {
+                console.log('get token error:', error);
+              }
+            });
+          }
         }
+      },
+      mounted: function() {
+        let vm = this;
+        let cur_timestamp = moment().unix();
+        // let signature = vm.make_signature(cur_timestamp)
+        // wx.config({
+        //   debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        //   appId: app_id, // 必填，公众号的唯一标识
+        //   timestamp: cur_timestamp, // 必填，生成签名的时间戳
+        //   nonceStr: noncestr, // 必填，生成签名的随机串
+        //   signature: signature,// 必填，签名
+        //   jsApiList: ['scanQRCode'] // 必填，需要使用的JS接口列表
+        // });
+      },
+      created: function() {
+        let vm = this;
+        vm.getTokenStorage();
       }
     });
     //  Then translate something
