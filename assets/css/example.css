@@ -613,3 +613,16 @@ body[data-weui-theme=dark] .page.home .page__bd img {
       padding: 0
   }
 }
+
+.weui-grid__icon.weui-grid__icon-l {
+  width: 48px;
+  height: 48px;
+}
+
+.p-1 {
+  padding: 5px!important;
+}
+
+.round-45 {
+  border-radius: 90px!important;
+}
