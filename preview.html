@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>涓涓商城</title>
+    <link rel="shortcut icon" href="http://img.wxfenxiao.com/2020471/2016-01/568b200d756ff.jpg">
+    <link rel="stylesheet" href="./assets/css/preview/preview.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" crossorigin="anonymous">
+</head>
+<body>
+    <section class="preview_box">
+    <div class="select_phone">
+        <p><i></i>选择机型</p>
+        <ul>
+            <li data-type='phone6p' class="active" ><i></i><span>iPhone 6 Plus</span></li>
+            <li data-type='phone6'><i></i><span>iPhone 6 </span></li>
+            <li data-type='phone5'><i></i><span>iPhone 5s</span></li>
+            <li data-type='note4'><i></i><span>三星Note 4</span></li>
+            <li data-type='p8'><i></i><span>华为P8</span></li>
+            <li data-type='mim4'><i></i><span>小米M4</span></li>
+            <li data-type='ipad'><i></i><span>iPad Air 2</span></li>
+        </ul>
+        <div class="qrcode-container">
+            <p>微信“扫一扫”浏览</p>
+            <img src="http://m2.wxfenxiao.com/Public/qrcode?link=http%3A%2F%2Fm2.wxfenxiao.com%2FItem%2Fdetail%2Fid%2F2543362%2Fsid%2F2020471.html%3Fpid%3D0%26is_priview%3D1" width="158" height="158" class="hPage-using-qrcode">
+        </div>
+    </div>
+    <div class="iframe_box">
+        <div class="container mb-3">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form clearfix">
+                    <div class="form-group float-left">
+                        <label for="txt-target-url">请输入需要URL</label>
+                        <textarea class="form-control" id="txt-target-url" rows="3"></textarea>
+                        <small id="emailHelp" class="form-text text-muted">输入需要预览的页面的URL，然后点击[预览]按钮</small>
+                    </div>
+                    <button type="button" id="btn-preview" class="btn btn-sm ml-1 btn-primary float-right"
+                        style="position: absolute; bottom: 40px; right: 0;">预览</button>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <div class="" id='phonename'>
+            <a href="javascript:;" onclick='window.history.back();'><i class="black"></i></a>
+            <!--<iframe src="http://m2.wxfenxiao.com/Item/detail/id/2543362/sid/2020471.html?pid=0&is_priview=1" id="ifreme" frameborder="0"></iframe>-->
+            <iframe src="/mall/main.html" id="ifreme" frameborder="0"></iframe>
+            <!-- <div class="territory"></div> -->
+        </div>
+    </div>
+    </section>
+    <script src="./assets/js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(window).ready(function(){
+            let urlParams = getUrlParams(location.search);
+            if (urlParams.hasOwnProperty('target')) { 
+                console.log(urlParams.target);
+                loadIframe('iframe', urlParams.target);
+                $('#txt-target-url').val(urlParams.target);
+            } else {
+                loadIframe('iframe', '/mall/main.html');
+                $('#txt-target-url').val('/mall/main.html');
+            }
+
+            $('#btn-preview').on('click', function(){
+                let urlParams = getUrlParams(location.search);
+                if (urlParams.hasOwnProperty('target')) {
+                    loadIframe('iframe', urlParams.target);
+                } else {
+                    loadIframe('iframe', '/mall/main.html');
+                }
+            });
+        });
+        $(window).load(function(){
+            $(".preview_box").show();
+            // $(".iframe_box").show();
+            var window_width=window.screen.width;
+            if(document.getElementById('ifreme').contentWindow.document.getElementsByClassName('nav-lists').length>0){
+                document.getElementById('ifreme').contentWindow.document.getElementsByClassName('inner')[0].style.minWidth="auto";
+            }
+
+            // $("#ifreme").contents()[0].filter(".membersbox .nav .inner").css("min-width","auto");
+            // if(window_width<=1280){
+            //     $("#phonename").css("zoom","86%");
+            // }else if(1280<window_width<=1366){
+            //     $("#phonename").css("zoom","");
+            // }
+            // else{
+            //     $("#phonename").css("zoom","");
+            // }
+            $("#ifreme").contents().find("a").each(function(){
+                $(this).attr("target","_parent");
+            });
+            $("#ifreme").contents().scroll(function(){
+                var $self = $(this).find('body'),
+                    $a = $self.find('a');
+                $a.attr('target','_parent');
+            })
+            $("#ifreme").contents().find("form").each(function(){
+                $(this).attr("target","_top");
+            });
+        });
+        //设置cookie
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+        //获取cookie
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+        //清除cookie
+        function clearCookie(name) {
+            setCookie(name, "", -1);
+        }
+
+        /**
+         * Accepts either a URL or querystring and returns an object associating 
+         * each querystring parameter to its value. 
+         *
+         * Returns an empty object if no querystring parameters found.
+         */
+        function getUrlParams(urlOrQueryString) {
+            if ((i = urlOrQueryString.indexOf('?')) >= 0) {
+                const queryString = urlOrQueryString.substring(i+1);
+                if (queryString) {
+                return _mapUrlParams(queryString);
+                } 
+            }
+
+            return {};
+        }
+
+        /**
+         * Helper function for `getUrlParams()`
+         * Builds the querystring parameter to value object map.
+         *
+         * @param queryString {string} - The full querystring, without the leading '?'.
+         */
+        function _mapUrlParams(queryString) {
+            return queryString    
+                .split('&') 
+                .map(function(keyValueString) { return keyValueString.split('=') })
+                .reduce(function(urlParams, [key, value]) {
+                if (Number.isInteger(parseInt(value)) && parseInt(value) == value) {
+                    urlParams[key] = parseInt(value);
+                } else {
+                    urlParams[key] = decodeURI(value);
+                }
+                return urlParams;
+                }, {});
+        }
+
+        function loadIframe(iframeName, url) {
+            var $iframe = $('#' + iframeName);
+            if ( $iframe.length ) {
+                $iframe.attr('src',url);   
+                return false;
+            }
+            return true;
+        }
+
+        var c_phonename=getCookie('phoneName');
+        if(c_phonename.length==0){
+            $("#phonename").attr("class","phone6p");
+        }else{
+            $("#phonename").attr("class",c_phonename);
+        }
+        var phonetype=$("#phonename").attr("class");
+        $(".select_phone ul").find("li").each(function(){
+            var $this=$(this),
+                type=$this.data("type");
+            if(phonetype==type){
+                $this.addClass("active").siblings("li").removeClass("active");
+            }
+        });
+        // 切换设备
+        $(".select_phone ul").find("li").click(function(){
+            var $this=$(this),
+                type=$this.data("type");
+            $this.addClass("active").siblings("li").removeClass("active");
+            $("#phonename").attr("class",type);
+            // 设置cookie
+            setCookie('phoneName',type);
+            window.location.reload();
+        });
+
+    </script>
+</body>
+</html>

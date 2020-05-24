@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1,viewport-fit=cover" name="viewport">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="format-detection" content="telephone=no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <link rel="shortcut icon" href="http://img.wxfenxiao.com/2020471/2016-01/568b200d756ff.jpg">
+      
+    <meta http-equiv="Cache-Control" content="max-age=900">
+      
+    <title>店铺首页</title>
+    <link rel="stylesheet" href="./assets/css/lingwei/style.css?v=202005131221223201223">
+    <link rel="stylesheet" href="./assets/css/lingwei/SpsBtn.css?v=202005131221223201223">
+    <!-- http://m2.wxfenxiao.com/ -->
+    
+      <link rel="stylesheet" type="text/css" href="./assets/css/lingwei/header_style16.css">
+      <link rel="stylesheet" type="text/css" href="./assets/css/lingwei/idangerous.swiper.css">
+  
+  
+    <!-- 百度统计 -->
+    
+    <style>
+        .mdetail_bottom {
+          max-width: 100%;
+        }
+      </style>  
+    <style type="text/css">.amap-indoor-map .label-canvas{position:absolute;top:0;left:0}.amap-indoor-map .highlight-image-con *{pointer-events:none}.amap-indoormap-floorbar-control{position:absolute;margin:auto 0;bottom:165px;right:12px;width:35px;text-align:center;line-height:1.3em;overflow:hidden;padding:0 2px}.amap-indoormap-floorbar-control .panel-box{background-color:rgba(255,255,255,.9);border-radius:3px;border:1px solid #ccc}.amap-indoormap-floorbar-control .select-dock{position:absolute;top:0;left:0;width:100%;box-sizing:border-box;height:30px;border:solid #4196ff;border-width:0 2px;border-radius:2px;pointer-events:none;background:linear-gradient(to bottom,#f6f8f9 0,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%)}.amap-indoor-map .transition{transition:opacity .2s},.amap-indoormap-floorbar-control .transition{transition:top .2s,margin-top .2s}.amap-indoormap-floorbar-control .select-dock:after,.amap-indoormap-floorbar-control .select-dock:before{content:"";position:absolute;width:0;height:0;left:0;top:10px;border:solid transparent;border-width:4px;border-left-color:#4196ff}.amap-indoormap-floorbar-control .select-dock:after{right:0;left:auto;border-left-color:transparent;border-right-color:#4196ff}.amap-indoormap-floorbar-control.is-mobile{width:37px}.amap-indoormap-floorbar-control.is-mobile .floor-btn{height:35px;line-height:35px}.amap-indoormap-floorbar-control.is-mobile .select-dock{height:35px;top:36px}.amap-indoormap-floorbar-control.is-mobile .select-dock:after,.amap-indoormap-floorbar-control.is-mobile .select-dock:before{top:13px}.amap-indoormap-floorbar-control.is-mobile .floor-list-box{height:105px}.amap-indoormap-floorbar-control .floor-list-item .floor-btn{color:#555;font-family:"Times New Roman",sans-serif,"Microsoft Yahei";font-size:16px}.amap-indoormap-floorbar-control .floor-list-item.selected .floor-btn{color:#000}.amap-indoormap-floorbar-control .floor-btn{height:28px;line-height:28px;overflow:hidden;cursor:pointer;position:relative;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.amap-indoormap-floorbar-control .floor-btn:hover{background-color:rgba(221,221,221,.4)}.amap-indoormap-floorbar-control .floor-minus,.amap-indoormap-floorbar-control .floor-plus{position:relative;text-indent:-1000em}.amap-indoormap-floorbar-control .floor-minus:after,.amap-indoormap-floorbar-control .floor-plus:after{content:"";position:absolute;margin:auto;top:9px;left:0;right:0;width:0;height:0;border:solid transparent;border-width:10px 8px;border-top-color:#777}.amap-indoormap-floorbar-control .floor-minus.disabled,.amap-indoormap-floorbar-control .floor-plus.disabled{opacity:.3}.amap-indoormap-floorbar-control .floor-plus:after{border-bottom-color:#777;border-top-color:transparent;top:-3px}.amap-indoormap-floorbar-control .floor-list-box{max-height:153px;position:relative;overflow-y:hidden}.amap-indoormap-floorbar-control .floor-list{margin:0;padding:0;list-style:none}.amap-indoormap-floorbar-control .floor-list-item{position:relative}.amap-indoormap-floorbar-control .floor-btn.disabled,.amap-indoormap-floorbar-control .floor-btn.disabled *,.amap-indoormap-floorbar-control.with-indrm-loader *{-webkit-pointer-events:none!important;pointer-events:none!important}.amap-indoormap-floorbar-control .with-indrm-loader .floor-nonas{opacity:.5}.amap-indoor-map-moverf-marker{color:#555;background-color:#FFFEEF;border:1px solid #7E7E7E;padding:3px 6px;font-size:12px;white-space:nowrap;display:inline-block;position:absolute;top:1em;left:1.2em}.amap-indoormap-floorbar-control .amap-indrm-loader{-moz-animation:amap-indrm-loader 1250ms infinite linear;-webkit-animation:amap-indrm-loader 1250ms infinite linear;animation:amap-indrm-loader 1250ms infinite linear;border:2px solid #91A3D8;border-right-color:transparent;box-sizing:border-box;display:inline-block;overflow:hidden;text-indent:-9999px;width:13px;height:13px;border-radius:7px;position:absolute;margin:auto;top:0;left:0;right:0;bottom:0}@-moz-keyframes amap-indrm-loader{0%{-moz-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes amap-indrm-loader{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes amap-indrm-loader{0%{-moz-transform:rotate(0deg);-ms-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(360deg);-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)}}</style><style type="text/css">.amap-logo{display:block!important;pointer-events:none;}</style><style type="text/css" class="AMap.style">.vml{behavior:url(#default#VML);display:inline-block;position:absolute}.amap-custom{top:0;left:0;position:absolute}.amap-container img{max-width:none!important;max-height:none!important}.amap-container{touch-action:none;position:relative;overflow:hidden;background:#fcf9f2 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0AgMAAAC2uDcZAAAADFBMVEX////////////////1pQ5zAAAABHRSTlMAgP/AWuZC2AAAAVhJREFUeAFiYGAQYGDEQjAB2rcDC4BiGIqiU7abdKlO2QkeIClyPsDHweMKtOPHIJ1Op6/w7Y4fdqfT6VpndzqdrnV2p9PpWmd3Oj3qWndSoKp+2J1Op7vr7E6n07XO7nQ6XevsTqfTtc7udPo4/f787E6n0911dqfT6VpndzqdrnV2p9PpWmd3Ot27Ce8m6HS6u85dR6fTtU7r6HS61mkdnU7XOrvT6XTvJuxOp9PddXan0+laZ3c6na51dDpd67SOTqd7N+HdBJ1Od9e56+h0utZpHZ1O1zq70+l0rbM7nU73bsLudDrdXWd3Ol3rtI5Op2ud1tHpdK3TOjqd7t2EdxN0Ot1dZ3c6na51dqfT6VpndzqdrnV2p9Pp3k3Q6XR3nbuOTqdrndbR6XSt0zo6na51Wken072bsDudTnfX2Z1Op2ud3el0utbZnU7XOq2j0+t0uncTD1gO4zoT5doZAAAAAElFTkSuQmCC);-ms-touch-action:none}.amap-drags,.amap-layers{width:100%;height:100%;position:absolute;overflow:hidden}.amap-layer img{pointer-events:none}.amap-e,.amap-maps{width:100%;height:100%}.amap-maps,.amap-e,.amap-layers,.amap-tile,.amap-tile-container{position:absolute;left:0;top:0;overflow:hidden}.amap-context{position:absolute;left:0;top:0}.amap-overlays,.amap-markers,.amap-marker{position:absolute;left:0;top:0}.amap-layers{z-index:0}.amap-overlays{z-index:110;cursor:default}.amap-markers{z-index:120}.amap-controls{z-index:150}.amap-copyright{position:absolute;display:block!important;left:77px;height:16px;bottom:0;padding-bottom:3px;font-size:11px;font-family:Arial,sans-serif;z-index:160}.amap-logo{position:absolute;bottom:1px;left:1px;z-index:160;height:20px}.amap-logo img{width:73px!important;height:20px!important;border:0;vertical-align:baseline!important}.amap-icon{position:relative;z-index:1;overflow:hidden}.amap-icon img{position:absolute;z-index:-1}.amap-marker-label{position:absolute;z-index:2;border:1px solid blue;background-color:white;white-space:nowrap;cursor:default;padding:3px;font-size:12px;line-height:14px}.amap-info{position:absolute;left:0;z-index:140;width:320px}.amap-menu{position:absolute;z-index:140;_width:100px}.amap-info-close{position:absolute;right:5px;_right:12px;+right:11px;top:5px;_top:2px;+top:2px;color:#c3c3c3;text-decoration:none;font:bold 16px/14px Tahoma,Verdana,sans-serif;width:14px;height:14px}.amap-info-outer,.amap-menu-outer{box-shadow:0 3px 14px rgba(0,0,100,0.6);background:none repeat scroll 0 0 white;border-radius:2px;padding:1px;text-align:left;border:#c0c0c0 solid 1px}.amap-info-outer:hover,.amap-menu-outer:hover{box-shadow:0 3px 14px rgba(0,0,0,0.75)}.amap-info-content{background:#fff;border:1px solid #ccc;padding:10px 18px 10px 10px;+margin:0 10px;+padding:10px 0;line-height:1.4;overflow:auto}.amap-marker-content{position:relative}.amap-info{_width:320px}.amap-menu{_width:100px}.amap-info-sharp{height:23px;margin:0 auto;overflow:hidden;position:relative;top:-1px;width:30px;background-image:url(https://webapi.amap.com/theme/v1.3/sharp.png);_background-image:url(https://webapi.amap.com/theme/v1.3/sharp.gif)}.amap-menu-outer{margin:0;padding:0;list-style-type:none}ul.amap-menu-outer li{cursor:pointer;height:35px;line-height:35px;word-break:break-all;padding:0 10px;font-size:12px;white-space:nowrap}ul.amap-menu-outer li a{text-decoration:none;font-size:13px;margin:0 5px;color:#000;padding:5px 5px}ul.amap-menu-outer li:hover{background-color:#f3f3ee}.amap-overlay-text-container{display:block;width:auto;word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:#fff;padding:2px 3px;border:1px solid #ccc;border-radius:3px}.amap-overlay-text-container.amap-overlay-text-empty{display:none}</style>
+    
+      <!-- pc端微信 -->
+      <!-- 首页装修页面组件商品加购物车样式 start -->
+    <link rel="stylesheet" href="./assets/css/lingwei/activeity_crowdIndex.css?v=202005131221223201223">
+    <!-- 首页装修页面组件商品加购物车样式 end -->
+    <!-- 会员登录绑定手机号样式 start -->
+    <link rel="stylesheet" href="./assets/css/lingwei/module_verifyPhone.css?v=202005131221223201223">
+    <!-- 会员登录绑定手机号样式 end -->
+  <style type="text/css">.gearYM,.gearDate,.gearDatetime,.gearTime{font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:10px;background-color:rgba(0,0,0,0.2);display:block;position:fixed;top:0;left:0;width:100%;height:100%;z-index:9900;overflow:hidden;-webkit-animation-fill-mode:both;animation-fill-mode:both}.date_ctrl{vertical-align:middle;background-color:#fff;color:#000;margin:0;height:auto;width:100%;position:absolute;left:0;bottom:0;z-index:9901;overflow:hidden;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}.slideInUp{animation:slideInUp .3s ease;-webkit-animation:slideInUp .3s ease;}@-webkit-keyframes slideInUp{from{-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}to{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}.ym_roll,.date_roll,.datetime_roll,.time_roll{display:-webkit-box;width:100%;height:auto;overflow:hidden;font-weight:bold;background-color:transparent;-webkit-mask:-webkit-gradient(linear,0% 50%,0% 100%,from(#debb47),to(rgba(36,142,36,0)));-webkit-mask:-webkit-linear-gradient(top,#debb47 50%,rgba(36,142,36,0))}.ym_roll>div,.date_roll>div,.datetime_roll>div,.time_roll>div{font-size:2.3em;height:6em;float:left;background-color:transparent;position:relative;overflow:hidden;-webkit-box-flex:4}.ym_roll>div .gear,.date_roll>div .gear,.datetime_roll>div .gear,.time_roll>div .gear{width:100%;float:left;position:absolute;z-index:9902;margin-top:-6em}.date_roll_mask{-webkit-mask:-webkit-gradient(linear,0% 40%,0% 0%,from(#debb47),to(rgba(36,142,36,0)));-webkit-mask:-webkit-linear-gradient(bottom,#debb47 50%,rgba(36,142,36,0));padding:0 0 3em 0}.date_roll>div:nth-child(2){-webkit-box-flex:2}.date_roll>div:nth-child(1),.datetime_roll>div:nth-child(1){-webkit-box-flex:4}.datetime_roll>div:first-child{-webkit-box-flex:6}.datetime_roll>div:last-child{-webkit-box-flex:6}.date_grid{position:relative;top:2em;width:100%;height:2em;margin:0;box-sizing:border-box;z-index:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc}.date_grid>div{color:#000;position:absolute;right:0;top:0;font-size:.8em;line-height:2.5em}.date_roll>div:nth-child(3) .date_grid>div{left:42%}.datetime_roll>div .date_grid>div{right:0}.datetime_roll>div:first-child .date_grid>div{left:auto;right:0%}.datetime_roll>div:last-child .date_grid>div{left:50%}.time_roll>div:nth-child(1) .date_grid>div{right:1em}.ym_roll>div:nth-child(1) .date_grid>div{right:.1em}.ym_roll>div .date_grid>div,.time_roll>div .date_grid>div{right:5em}.date_btn{color:#ff8f09;font-size:1.6em;font-weight:bold;line-height:1em;text-align:center;padding:.8em 1em}.date_btn_box:before,.date_btn_box:after{content:"";position:absolute;height:1px;width:100%;display:block;background-color:#ccc;z-index:15;-webkit-transform:scaleY(0.33);transform:scaleY(0.33)}.date_btn_box{display:-webkit-box;-webkit-box-pack:justify;-webkit-box-align:stretch;background-color:#f5f5f5;position:relative}.date_btn_box:before{left:0;top:0;-webkit-transform-origin:50% 20%;transform-origin:50% 20%}.date_btn_box:after{left:0;bottom:0;-webkit-transform-origin:50% 70%;transform-origin:50% 70%}.date_roll>div:nth-child(1) .gear{text-indent:20%}.date_roll>div:nth-child(2) .gear{text-indent:-20%}.date_roll>div:nth-child(3) .gear{text-indent:-55%}.datetime_roll>div .gear{width:100%;text-indent:-25%}.datetime_roll>div:first-child .gear{text-indent:-10%}.datetime_roll>div:last-child .gear{text-indent:-50%}.ym_roll>div .gear,.time_roll>div .gear{width:100%;text-indent:-70%}.ym_roll>div:nth-child(1) .gear,.time_roll>div:nth-child(1) .gear{width:100%;text-indent:10%}.tooth{height:2em;line-height:2em;text-align:center}</style><style type="text/css">.amap-container{cursor:url(https://webapi.amap.com/theme/v1.3/openhand.cur),default;}.amap-drag{cursor:url(https://webapi.amap.com/theme/v1.3/closedhand.cur),default;}</style></head>
+  
+  <body style="background-color:
+      #f8f8f8;  width:100%;">
+  
+    <!-- 当前装修首页请求的下一页数据页数  0代表不需要请求下一页 不是0的话就代表下一页的页数-->
+    <input type="hidden" name="next_diy_page" value="0">
+    <!-- 当前装修数据要请求的第几套模版id -->
+    <input type="hidden" value="16" name="diyHtmlTplId">
+    <!-- 供应商店铺首页标题 -->
+    <input type="hidden" value="" id="supplier_title">
+  
+    <!-- 滑动导航设置顶部置顶功能 -->
+    <input type="hidden" name="is_top_slideNav" value="">
+      <!-- 返回粉盟直播入口 -->
+      <!-- 地图 -->
+    <div id="iCenter" class="amap-container" style="position: relative;"><object style="display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; pointer-events: none; z-index: -1;" type="text/html" data="about:blank"></object><div class="amap-maps"><div class="amap-drags"><div class="amap-layers"><div class="amap-markers"></div></div><div class="amap-overlays"></div></div></div><div style="display: none;"></div><div class="amap-controls"></div><a class="amap-logo" href="http://gaode.com?pid=0" target="_parent"><img src="https://webapi.amap.com/theme/v1.3/logo@1x.png"></a><div class="amap-copyright" style="display: none;"></div></div>
+    <!-- 自定义活动弹框 -->
+      <!-- 会员体系自定义弹框 -->
+    <section class="member_txt_box">
+      <section class="member_txt_container">
+        <div class="member_txt_container_bg">
+          <div class="item" id="user_system_description"></div>
+          <!--文字式条款体制配置信息 start-->
+          <input type="hidden" name="open_user_system" id="open_user_system" value="">
+          <input type="hidden" name="user_system_num" id="user_system_num" value="0">
+          <!--end-->
+          <section class="pay_bottom">
+            <section class="pays_btn j-confirm">确认</section>
+          </section>
+        </div>
+      </section>
+    </section>
+  
+    <div class="top-panel">
+      <div class="apptip" id="j-quickFollow-autohide" style="display:none;">
+        <i class="icon-close j-appdown-close"></i>
+        <div class="apptip-logo clearfix">
+          <img class="fl" src="">
+          <div class="apptip-logo-con">
+                        <span class="apptip-text fl single">关注公众号，享专属服务</span>        </div>
+          <a href="javascript:;" class="apptip-btn fr j-quickFollow" target="_parent">立即关注</a>
+        </div>
+      </div>
+  
+      <!-- 在app中打开 -->
+        </div>
+  
+    <div class="membersbox pad50">
+      
+      <!-- 判断是否有PModules -->
+      <div class="membersbox" style="padding-bottom:15px; position:relative;">
+              <section class="mobile9_headertop">
+                  <img src="http://img.wxfenxiao.com/2020471/2016-01/568b24b9d71cf.jpg" width="100%">
+                  <section class="mobile9_headerbot_le j-shopLogo">
+                      <img src="http://img.wxfenxiao.com/2020471/2016-01/568b200d756ff.jpg" width="85" height="85">
+                  </section>
+                  <section class="mobile9_headerbot_lenox j-shopTitle">凌伟商贸</section>
+              </section>
+          </div>	<div style="display: none;"></div>
+      <div class="members_con j-diyHtml ">
+          <section class="modulePadding" style="padding-top: 0px; padding-bottom: 5px;">
+  <input type="hidden" class="store_id_cost" name="store_id" value="">
+      <section class="members_goodspic">
+                      <ul>
+                          <li class="b_mingoods">
+                              <div class="b_mingoods_wrapper">
+                                  <a href="http://m2.wxfenxiao.com/Item/detail/id/2543362/sid/2020471.html?pid=0" style="height: 150px;" target="_parent">
+                                      <img src="http://img.wxfenxiao.com/2020471/2016-01/568b5dea22bed.JPG@!480x480" class="lazyload" width="100%" style="opacity: 1; transition: opacity 0.3s linear 0s;">
+                                                                      </a>
+                                  <section>
+                                      <div class="b_mingoods_new">
+                                          <p class="goods-title ">
+                                                                                                                                                                          555牙刷078情侣牙刷 2支装 正品 情侣牙刷韩风时尚牙刷                                            </p>                                        <p class="pic_box"><span class="yj">¥4.80</span>                                                                                </p>
+                                          <p>
+                                              <span class="goods-pirce  fl"><span class="yen">¥</span>7.80</span>
+                                                                                      </p>
+                                      </div>
+                                  </section>                                                            </div>
+  
+                              <div class="corner-mark">
+                                                                      </div>
+                          </li><li class="b_mingoods">
+                              <div class="b_mingoods_wrapper">
+                                  <a href="http://m2.wxfenxiao.com/Item/detail/id/2543338/sid/2020471.html?pid=0" style="height: 150px;" target="_parent">
+                                      <img src="http://img.wxfenxiao.com/2020471/2016-01/568b5cfaf2ce2.JPG@!480x480" class="lazyload" width="100%" style="opacity: 1; transition: opacity 0.3s linear 0s;">
+                                                                      </a>
+                                  <section>
+                                      <div class="b_mingoods_new">
+                                          <p class="goods-title ">
+                                                                                                                                                                          高露洁牙膏茶健清醇龙井牙膏高露洁 包邮促销 清新口气 美                                            </p>                                        <p class="pic_box"><span class="yj">¥4.80</span>                                                                                </p>
+                                          <p>
+                                              <span class="goods-pirce  fl"><span class="yen">¥</span>3.80</span>
+                                                                                      </p>
+                                      </div>
+                                  </section>                                                            </div>
+  
+                              <div class="corner-mark">
+                                                                      </div>
+                          </li><li class="b_mingoods">
+                              <div class="b_mingoods_wrapper">
+                                  <a href="http://m2.wxfenxiao.com/Item/detail/id/2543308/sid/2020471.html?pid=0" style="height: 150px;" target="_parent">
+                                      <img src="http://img.wxfenxiao.com/2020471/2016-01/568b5b2b3e546.jpg@!480x480" class="lazyload" width="100%" style="opacity: 1; transition: opacity 0.3s linear 0s;">
+                                                                      </a>
+                                  <section>
+                                      <div class="b_mingoods_new">
+                                          <p class="goods-title ">
+                                                                                                                                                                          高露洁牙膏360度卓效护龈140g 防止牙龈出血s                                            </p>                                        <p class="pic_box"><span class="yj">¥25.80</span>                                                                                </p>
+                                          <p>
+                                              <span class="goods-pirce  fl"><span class="yen">¥</span>18.80</span>
+                                                                                      </p>
+                                      </div>
+                                  </section>                                                            </div>
+  
+                              <div class="corner-mark">
+                                                                      </div>
+                          </li><li class="b_mingoods">
+                              <div class="b_mingoods_wrapper">
+                                  <a href="http://m2.wxfenxiao.com/Item/detail/id/2542355/sid/2020471.html?pid=0" style="height: 150px;" target="_parent">
+                                      <img src="http://img.wxfenxiao.com/2020471/2016-01/568b22311d8c5.JPG@!480x480" class="lazyload" width="100%" style="opacity: 1; transition: opacity 0.3s linear 0s;">
+                                                                      </a>
+                                  <section>
+                                      <div class="b_mingoods_new">
+                                          <p class="goods-title ">
+                                                                                                                                                                          青蛙155b牙刷 牙龈按摩 交叉型中毛 多效去烟渍 正品                                            </p>                                        <p class="pic_box"><span class="yj">¥8.20</span>                                                                                </p>
+                                          <p>
+                                              <span class="goods-pirce  fl"><span class="yen">¥</span>5.90</span>
+                                                                                      </p>
+                                      </div>
+                                  </section>                                                            </div>
+  
+                              <div class="corner-mark">
+                                                                      </div>
+                          </li><li class="b_mingoods">
+                              <div class="b_mingoods_wrapper">
+                                  <a href="http://m2.wxfenxiao.com/Item/detail/id/2544158/sid/2020471.html?pid=0" style="height: 150px;" target="_parent">
+                                      <img src="http://img.wxfenxiao.com/2020471/2016-01/568b8dc4d8602.JPG@!480x480" class="lazyload" width="100%" style="opacity: 1; transition: opacity 0.3s linear 0s;">
+                                                                      </a>
+                                  <section>
+                                      <div class="b_mingoods_new">
+                                          <p class="goods-title ">
+                                                                                                                                                                          怡雪亮齿舒适686牙刷 全效耀洁 牙刷 护理牙齿                                            </p>                                        <p class="pic_box"><span class="yj">¥4.50</span>                                                                                </p>
+                                          <p>
+                                              <span class="goods-pirce  fl"><span class="yen">¥</span>2.19</span>
+                                                                                      </p>
+                                      </div>
+                                  </section>                                                            </div>
+  
+                              <div class="corner-mark">
+                                                                      </div>
+                          </li><li class="b_mingoods">
+                              <div class="b_mingoods_wrapper">
+                                  <a href="http://m2.wxfenxiao.com/Item/detail/id/2544149/sid/2020471.html?pid=0" style="height: 150px;" target="_parent">
+                                      <img src="http://img.wxfenxiao.com/2020471/2016-01/568b8cc309044.jpg@!480x480" class="lazyload" width="100%" style="opacity: 1; transition: opacity 0.3s linear 0s;">
+                                                                      </a>
+                                  <section>
+                                      <div class="b_mingoods_new">
+                                          <p class="goods-title ">
+                                                                                                                                                                          怡雪 W型极护软毛牙刷 深层清洁防牙龈出血牙刷软毛658                                            </p>                                        <p class="pic_box"><span class="yj">¥3.50</span>                                                                                </p>
+                                          <p>
+                                              <span class="goods-pirce  fl"><span class="yen">¥</span>1.99</span>
+                                                                                      </p>
+                                      </div>
+                                  </section>                                                            </div>
+  
+                              <div class="corner-mark">
+                                                                      </div>
+                          </li>                    </ul>
+                  </section>
+                          </section>	</div>
+  
+  
+      
+      <section class="members_bottom support">
+            <section style="width:auto;height:auto;padding:0 3.125%;">
+                <p>All Rights Reserved ©2020 凌伟商贸 版权所有</p>
+                  <!-- condition="$support"
+                  <p>技术支持：凌伟商贸</p> -->
+                  
+              </section>
+                      </section>
+              <section class="qiboot-content">
+            <section id="qiboot-copyleft" style="background-image:url(http://img.wxfenxiao.com/2020471/2016-01/568b200d756ff.jpg            )"></section>
+        <a href="http://h5.wifenxiao.com/?pid=0" target="_parent">
+            <section id="qiboot-copyright"></section>
+          </a>
+                </section>
+            
+      <b id="htmlReplace-navCart"></b>
+    </div>
+    <!--导航-->
+    <div class="nav">
+  
+        <section class="inner" style="min-width: auto;">
+          <section class="nav-lists clearfix hasmenu9">
+                      <dl class="nav-item j-showNavSub wid4 style0 fl">
+                <dt><a href="/Shop/index/l2u/qirs/sid/2020471.html?pid=0" id="" target="_parent">店铺主页</a></dt>
+      </dl><dl class="nav-item j-showNavSub wid4 style0 fl">
+                <dt><a href="/User/index/pvmn/0gkEM/sid/2020471.html?pid=0" id="" target="_parent">会员主页</a></dt>
+      </dl><dl class="nav-item j-showNavSub wid4 style0 fl">
+                <dt><a href="/Item/cart/vcdY/okDrt/sid/2020471.html?pid=0" id="" target="_parent">购物车</a></dt>
+      </dl><dl class="nav-item j-showNavSub wid4 style0 fl">
+                <dt><a href="/User/dist_apply/Ern/zcR8/sid/2020471.html?pid=0" id="" target="_parent">分销申请</a></dt>
+      </dl>    </section>
+  
+    </section>
+    </div>  <div id="mmexport"><img src="/PublicMob/images/mmexport.png" width="100%" alt=""></div>
+    <div id="mmexport-pl" style="display: none;"><img src="/PublicMob/images/mmexport.png" width="100%" alt=""></div>
+    <div id="mmexport-share" style="    display: none;"><img src="/PublicMob/images/mmexport.png" width="100%" alt="">
+    </div>
+    <div id="mmexport-share-res" style="display: none;">
+      <div class="share_res">
+        <div class="share-res-top"><img src="/PublicMob/images/draw.png" width="27px">操作成功</div>
+        <p class="p1">有好货岂能私藏！</p>
+        <div id="share-again" class="share-btn">告诉TA</div>
+        <div class="share_line">
+          <p>好货提示</p>
+        </div>
+        <p class="p2">90%的人在这发现了心怡好货</p>
+        <a href="/Shop/index/ZVtu/ThfDHk/sid/2020471.html?pid=0" target="_parent">
+          <div class="share-btn share-btn2">前往店铺首页</div>
+        </a>
+        <span class="mmexport-share-close">×</span>
+      </div>
+    </div>
+    <div id="show_qrcode">
+      <div class="code_box">
+        <section><img src="" alt="">
+          <p>购买商品前需先关注公众号哟~</p>      </section>
+      </div>
+    </div>
+  
+    
+    <!--未支付订单弹窗-->
+    <div class="dashArea" id="dashArea" style="display: none;">
+      <div class="order_box">
+        <div class="order_bg"><img src="/PublicMob/images/dash_bg.png"></div>
+        <div class="order_detail">
+          <div class="order_img"></div>
+          <div class="order_title"></div>
+          <div class="order_hint">
+            <p>未支付的订单将在不久后自动关闭</p>
+            <p>请尽快支付</p>
+  
+            <div class="spinner">
+              <span class="bounce bounce1"></span>
+              <span class="bounce bounce2"></span>
+              <span class="bounce bounce3"></span>
+            </div>
+          </div>
+          <ul>
+            <a class="pay-close" href="javascript:void(0)" target="_parent">
+              <li class="btn_l">知道了</li>
+            </a>
+            <a class="pay-enter" href="javascript:void(0)" target="_parent">
+              <li class="btn_r">继续支付</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <!-- 悬浮按钮 -->
+    <div class="mask_menu" id="menubtn" style="display: none;"></div>
+        <div class="menu" id="menufloat"><i class="icon-menu"></i></div>
+                <div class="menu-c notel nofocus" id="menufloat-c" style="">
+            <div class="menu-c-out">
+              <div class="menu-c-inner">
+                <a class="a-home" href="/Shop/index?pid=0" title="首页" style="display: block;" target="_parent"></a>
+                <a class="a-tel" href="tel:18668351263" title="联系店主" style="display: inline;" target="_parent"></a>
+                <a class="a-member" href="/Item/cart?pid=0" title="购物车" style="display: block;" target="_parent"></a>
+                <a class="a-search" href="/User/index/cvwIJ/TNZ5Yc/sid/2020471.html?pid=0" title="会员" style="display: block;" target="_parent"></a>
+                <!-- <a class="a-cart" href="javascript:;" id="share-link" style="display: block;"></a> -->
+                <a class="a-cart" href="/Item/lists?pid=0" id="share-links" style="display: block;" target="_parent"></a>
+                <a class="a-collect" href="javascript:void(0)" id="collect-link" title="收藏" style="display: block;" target="_parent"></a>
+                <a class="a-server" href="/Item/lists?pid=0" title="搜索" style="display: block;" target="_parent"></a>
+              </div>
+            </div>
+          </div>    <!-- 收藏 -->
+      <div class="collectbg"><img src="/PublicMob/images/collectbg.png" width="100%" alt=""><a href="javascript:;" class="a-know" target="_parent">我知道了</a></div>
+      <div class="sharebg"><img src="/PublicMob/images/mmexport.png" width="100%" alt=""><a href="javascript:;" class="a-know" target="_parent">我知道了</a></div>
+    <!-- 完善手机号 -->
+    <link rel="stylesheet" href="/PublicMob/css/dist/user/addressManage.css?v=202005131221223201223">
+  <section id="popup-verifyPhone">
+      <div class="popup-verifyPhone-bg">
+          <div class="popup-verifyPhone-title">绑定手机号码</div>
+          <div class="popup-form">
+              <div class="ip">
+                  <input type="number" name="phone" placeholder="请填写您的手机号码">
+              </div>
+  
+              <div class="ip">
+                  <input type="password" name="pwd" placeholder="请设置至少6个字符的密码">
+              </div>
+              <div class="bind-address j-bind-address" style="display: none;">
+              <div class="ip">
+                  <input type="text" name="name" placeholder="请填写您的姓名">
+              </div>
+              <a href="javascript:;" class="selectAddress j-selectAddress-mobile" target="_parent"><em>点击选择地址</em></a>
+              <input type="hidden" name="province_id" value="">
+              <input type="hidden" name="city_id" value="">
+              <input type="hidden" name="area_id" value="">
+              <input type="hidden" name="town_id" value="">
+              </div>
+  
+                          <div class="popup-form-group popop-img">
+                  <div class="ip">
+                      <input type="text" name="verify_code" placeholder="图形验证码">
+                  </div>
+                  <div class="o o_code">
+                      <img src="" class="img_verify_code">
+                  </div>
+              </div>
+              <div class="popup-form-group msg-code">
+                  <div class="ip">
+                      <input type="text" name="code" placeholder="短信验证码">
+                  </div>
+                  <div class="o">
+                      <a href="javascript:;" class="popup-verifyPhone-btn get j-getSmsCode" target="_parent"> 获取验证码</a>
+                  </div>
+              </div>
+          </div>
+          <a href="javascript:;" class="popup-verifyPhone-btn j-submit" target="_parent">提交</a>
+      </div>
+      <a href="javascript:;" class="popup-verifyPhone-close" target="_parent"></a>
+  </section>
+  
+  <section id="popup-verifyPhone-overlay"></section>
+  <script src="/PublicMob/js/dist/lib-min.js?v=202005131221223201223"></script>
+  <script src="/PublicMob/js/dist/User/addressManage.js?v=202005131221223201223"></script>
+      <script type="text/j-template" id="j-addrM-list">
+      <%if(showAnimate){%>
+          <section class="adrM adrM-list hide">
+      <%}else{%>
+          <section class="adrM adrM-list">
+      <%}%>
+          <header class="top">
+              <%if(showBackButton){%>
+                  <a href="javascript:;" class="btn-backArrow j-addrM-back">
+                      <i class="icon-back"></i>
+                  </a>
+              <%}%>
+              <span><%=title%></span>
+          </header>
+  
+          <section class="content" style="top:0;">
+  
+              <ul class="list">
+                  <li class="list_box clearfix" id="list_box">
+  
+                      <input type="text"  id="list_search" placeholder="请输入姓名或者手机号" value=""/>
+                      <i class="submit" id="list_submit"></i>
+                  </li>
+              </ul>
+              <a href="javascript:;" class="loadmore j-Listloadmore"><span>点击加载更多</span><i class="loadmore-icon"></i></a>
+              <!-- <span class="loadmore loadmore-noMoreData j-noMoreData">没有更多数据</span> -->
+          </section>
+  
+          <!--客户定制：收货地址只能有一条，且无法编辑和删除；-->
+          <input type="hidden" name=is_dz value="">
+          <%if(showSyncWechatAddressBtn){%>
+              <footer class="bottom claerfix twobtn">
+                  <a href="javascript:;" class="fl j-addrM-add">添加新地址</a>
+                  <a href="javascript:;" class="fl green j-addrM-syncWechat">同步微信地址</a>
+              </footer>
+          <%}else{%>
+              <footer class="bottom">
+                  <a href="javascript:;" class="j-addrM-add">添加新地址</a>
+              </footer>
+          <%}%>
+      </section>
+  </script>
+  <!-- end 收货地址列表 -->
+  
+  <script type="text/j-template" id="j-addrM-list_item">
+      <%_.each(lists,function(item){%>
+          <li class="bdbox <%if(item.delivery_status==0){%>no_select<%}%>">
+              <a class="infos j-select-address" data-id="<%=item.address_id%>" data-delivery_status="<%=item.delivery_status%>">
+                  <p>
+                      <span class="name"><%=item.name%></span>
+                      <span class="mobile"><%=item.mobile%></span>
+                  </p>
+                  <p><%=item.province%> <%=item.city%> <%=item.area%> <%=item.town%> <%=item.address%></p>
+              </a>
+              <div class="actions clearfix">
+                  <a href="javascript:;" data-id="<%=item.address_id%>" class="btn-check fl j-addrM-setDefault <%if(item.is_default_address==1){%>checked<%}%>">
+                      <i class="icon-check bdbox"></i>
+                      <%if(item.is_default_address==1){%>
+                          <span>默认</span>
+                      <%}else{%>
+                          <span>设为默认</span>
+                      <%}%>
+                  </a>
+  
+                  <!--客户定制：收货地址只能有一条，且无法编辑和删除；-->
+                  <a href="javascript:;" data-id="<%=item.address_id%>" class="fr addrM j-addrM-del">
+                      <i class="icon-del"></i>
+                      <span>删除</span>
+                  </a>
+                  <a href="javascript:;" data-id="<%=item.address_id%>" class="fr addrM j-addrM-edit">
+                      <i class="icon-edit"></i>
+                      <span>编辑</span>
+                  </a>
+              </div>
+          </li>
+      <%})%>
+  </script>
+  
+  <script type="text/j-template" id="j-addrM-add">
+      <section class="adrM adrM-add hide">
+          <header class="top">
+              <a href="javascript:;" class="btn-backArrow j-addrM-back">
+                  <i class="icon-back"></i>
+              </a>
+              <%if(data.type=="add"){%>
+                  <span>添加新地址</span>
+              <%}else{%>
+                  <span>编辑地址</span>
+              <%}%>
+          </header>
+  
+          <section class="content">
+              <p class="address_title">快捷操作方式</p>
+              <div class="clearfix auto_discern">
+                  <textarea name="auto_discern_address" class="bdbox" placeholder="请填入快速识别地址"></textarea>
+                  <span class="j-AutoDiscern">点击识别</span>
+              </div>
+              <p class="address_title">收件人信息</p>
+              <ul class="add">
+                  <li class="clearfix">
+                      <label class="bdbox"><span class="colorRed">*</span> 收货人：</label>
+                      <input type="text" name="name" id="name" placeholder="请填写收货人的姓名" value="<%=data.name%>" class="ip">
+                  </li>
+                  <li class="clearfix">
+                      <label class="bdbox"><span class="colorRed">*</span> 手机号码：</label>
+                      <input type="tel" name="mobile" placeholder="请填写收货人的手机号码" value="<%=data.mobile%>" class="ip">
+                  </li>
+                  <li class="clearfix">
+                      <input type="hidden" class="isNeedAddress" value="">
+                      <label class="bdbox"><%if (isNeedAddress == 1) {%><span class="colorRed">*</span><%}%>  收货地区：</label>
+                      <a href="javascript:;" class="ip j-addrM-selectArea">
+                          <%if(data.province && data.province.length && data.city.length){%>
+                              <%=data.province%> <%=data.city%>
+                              <%if(data.area && data.area.length){%>
+                                  <%=data.area%>
+                              <%}%>
+                              <%if(data.town && data.town.length){%>
+                                  <%=data.town%>
+                              <%}%>
+                          <%}else{%>
+                              点击选择
+                          <%}%>
+                      </a>
+                  </li>
+                  <li class="clearfix">
+                      <label class="bdbox"> 邮政编码：</label>
+                      <input type="tel" name="zip" placeholder="请填写邮政编码" value="<%=data.zip%>" class="ip">
+                  </li>
+                  <li class="clearfix textarea">
+                      <label class="bdbox"><span class="colorRed">*</span> 详细地址：</label>
+                      <textarea name="address" class="bdbox" placeholder="请填写详细的地址"><%=data.address%></textarea>
+                  </li>
+              </ul>
+          </section>
+  
+          <footer class="bottom">
+              <%if(data.type=="add"){%>
+                  <a href="javascript:;" class="j-addrM-add">保存并使用</a>
+              <%}else{%>
+                  <a href="javascript:;" data-id="<%=data.address_id%>" class="j-addrM-add">保存</a>
+              <%}%>
+          </footer>
+  
+          <div id="address_map" style="display:none;">
+              <div class="address_search">
+                  <div class="address_search_bar van_search" style="background: rgb(255, 255, 255);">
+                      <div class="van_search_content van_search_content_square">
+                          <div class="van_search_label">
+                              <div class="address_search_label">
+                                  <span class="cur_location">杭州市</span><i class="address_search_icon van_icon van_icon_arrow_down"></i>
+                              </div>
+                          </div>
+                          <div class="van_cell van_cell_borderless van_field">
+                              <div class="van_field_left_icon"><i class="van_icon van_icon_search"></i></div>
+                              <div class="van_cell_value van_cell_value_alone">
+                                  <div class="van_field_body">
+                                      <input type="search" placeholder="请输入您的收货地址" id="inputsearch" class="van_field_control">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="van_search_action"><div>取消</div></div>
+                  </div>
+                  <div class="address_search_list">
+                  </div>
+              </div>
+              <div class="map_box">
+                  <div id="map_container"></div>
+                  <div class="marker_static"></div>
+                  <a id="map_locate" class="navi_icon" href="javascript:;"></a>
+                  <div class="amap_geolocation_con" style="position: absolute; z-index: 99; right: 10px; bottom: 10px;">
+                      <img src="/PublicMob/images/map/map_btn.png" class="address_map_map_button">
+                  </div>
+              </div>
+              <div class="address_map_pois">
+              </div>
+          </div>
+      </section>
+  </script>
+  <!-- end 编辑\添加地址 -->
+  
+  <script type="text/j-template" id="j-addrM-selectArea-province">
+      <section class="adrM adrM-selectArea adrM-selectArea-province hide">
+          <header class="top">
+              <a href="javascript:;" class="btn-backArrow j-addrM-back">
+                  <i class="icon-back"></i>
+              </a>
+              <span>请选择省份</span>
+          </header>
+  
+          <section class="content">
+              <ul class="area-list">
+                  <%_.each(data,function(item){%>
+                      <li>
+                          <a href="javascript:;" data-provinceid="<%=item.province_id%>"><%=item.province_name%></a>
+                      </li>
+                  <%})%>
+              </ul>
+          </section>
+      </section>
+  </script>
+  <!-- end 选择收货地区-省 -->
+  
+  <script type="text/j-template" id="j-addrM-selectArea-city">
+      <section class="adrM adrM-selectArea adrM-selectArea-city hide">
+          <header class="top">
+              <a href="javascript:;" class="btn-backArrow j-addrM-back">
+                  <i class="icon-back"></i>
+              </a>
+              <span>请选择城市</span>
+          </header>
+  
+          <section class="content">
+              <ul class="area-list">
+                  <%_.each(data,function(item){%>
+                      <li>
+                          <a href="javascript:;" data-cityid="<%=item.city_id%>"><%=item.city_name%></a>
+                      </li>
+                  <%})%>
+              </ul>
+          </section>
+      </section>
+  </script>
+  <!-- end 选择收货地区-市 -->
+  
+  <script type="text/j-template" id="j-addrM-selectArea-area">
+      <section class="adrM adrM-selectArea adrM-selectArea-area hide">
+          <header class="top">
+              <a href="javascript:;" class="btn-backArrow j-addrM-back">
+                  <i class="icon-back"></i>
+              </a>
+              <span>请选择区域</span>
+          </header>
+  
+          <section class="content">
+              <ul class="area-list">
+                  <%_.each(data,function(item){%>
+                      <li>
+                          <a href="javascript:;"  data-areaid="<%=item.area_id%>"><%=item.area_name%></a>
+                      </li>
+                  <%})%>
+              </ul>
+          </section>
+      </section>
+  </script>
+  <!-- end 选择收货地区-区 -->
+  
+  <script type="text/j-template" id="j-addrM-selectArea-street">
+      <section class="adrM adrM-selectArea adrM-selectArea-street hide">
+          <header class="top">
+              <a href="javascript:;" class="btn-backArrow j-addrM-back">
+                  <i class="icon-back"></i>
+              </a>
+              <span>请选择街道</span>
+          </header>
+  
+          <section class="content">
+              <ul class="area-list">
+                  <li><a href="javascript:;" class="noArrow">暂不选择</a></li>
+                  <%_.each(data,function(item){%>
+                      <li>
+                          <a href="javascript:;" class="noArrow" data-streetid="<%=item.town_id%>"><%=item.town_name%></a>
+                      </li>
+                  <%})%>
+              </ul>
+          </section>
+      </section>
+  </script>
+  <!-- end 选择收货街道 -->
+  
+      <script type="text/j-template" id="tpl_userCenter">
+          <div class="userCenter_shade"></div>
+          <div class="Quit_buttom"></div>
+          <section id="userCenter-overlay" class="bdbox">
+              <div class="uc-info clearfix">
+                  <div class="uc-info-avatar fl" style="background-image:url(<%=avatar%>);"></div>
+                  <div class="uc-info-meta-panel fl">
+                      <div class="uc-info-meta name j-uc-name"><%=nickname%></div>
+                      <%if(show_id){%>
+                          <div class="uc-info-meta userid"><%= uid %></div>
+                      <%}%>
+                      <% if(phone){ %>
+                      <div class="uc-info-meta phone"><%=phone%></div>
+                      <% }%>
+                  </div>
+              </div>
+  
+              <ul class="uc-data clearfix">
+                  <li class="bdbox">
+                      <a href="<%=url_wait_total%>"><i><%=wait_total%></i><p><%=ftitle_pending_pay%></p></a>
+                  </li>
+                  <li class="bdbox">
+                      <a href="<%=url_pay_total%>"><i><%=pay_total%></i><p><%=ftitle_have_pay%></p></a>
+                  </li>
+                  <li class="bdbox">
+                      <a href="<%=url_send_total%>"><i><%=send_total%></i><p><%=ftitle_has_shipped%></p></a>
+                  </li>
+                  <li class="bdbox">
+                      <a href="<%=url_return_total%>"><i><%=return_total%></i><p><%=ftitle_return_goods%></p></a>
+                  </li>
+              </ul>
+  
+              <ul class="uc-link">
+                  <li><a href="<%=url_allorder%>" class="icon_allorder">全部订单<span></span></a></li>
+                  <%if(show_myCommission){%>
+                      <li><a href="<%=url_wdyj%>" class="icon_wdyj"><%=ftitle_commission%><span></span></a></li>
+                  <%}%>
+                  <%if(show_point){%>
+                      <li><a href="<%=url_jf%>" class="icon_jf"><%=ftitle_point%><span></span></a></li>
+                  <%}%>
+                  <%if(show_coupon){%>
+                      <li><a href="<%=url_yhq%>" class="icon_yhq"><%=ftitle_coupon%><span></span></a></li>
+                  <%}%>
+                  <%if(show_interaction){%>
+                      <li><a href="<%=url_hyhd%>" class="icon_hyhd"><%=ftitle_game%><span></span></a></li>
+                  <%}%>
+              </ul>
+  
+              <div class="uc-actions clearfix">
+                  <a href="javascript:;" class="btn-back fl" id="btn-close-uc">返回</a>
+                  <a href="/User/index/HEmn/5vvKjR/sid/2020471.html" class="btn-enter fr">进入</a>
+              </div>
+          </section>
+      </script>
+    <!-- 会员中心浮层 -->
+    <section id="userCenter-overlay-close"></section>
+  
+  
+  
+      <input type="hidden" name="is_side_widget" value="">
+  
+    <!-- 商品订单下单弹窗 -->
+    <section class="j-close-popupSKU" id="overlay"></section>
+    <form action="/Order/buy/type/onbuy" method="post" id="order_form" class="formReplace" target="_top">
+      <b class="staticAjaxReplace" id="staticAjaxReplace-formHidden"></b>
+      <b class="staticAjaxReplace" id="staticAjaxReplace-popupSku"></b>
+    </form>
+  
+    <section class="loading" id="j-loading"></section>
+  
+    <!-- start popup 购买弹层sku -->
+    <section class="crowdPopup-sku bdbox" id="j-crowsku" style="display: none;">
+      <a href="javascript:;" class="btn-close j-close-popupSKU" target="_parent"></a>
+      <section class="crowdetail_infor popup bdbox">
+        <dl class="number-control">
+          <dd class="clearfix">
+            <div class="title fl">购买数量</div>
+            <div class="ctrl fr clearfix">
+              <a href="javascript:;" class="md_min" target="_parent">-</a>
+              <input type="tel" value="1" class="md_text appearance j-stocknum-ipt" data-maxnum="9999">
+              <a href="javascript:;" class="md_add" target="_parent">+</a>
+            </div>
+          </dd>
+        </dl>
+      </section>
+      <section class="crowdetail_infor">
+        <section class="payment-info">
+          <span class="pay-name">您将支付：</span>
+          <span class="pay-price"><i class="price"></i>×<i class="joinnum">1</i>/次=<i class="payment"></i></span>
+        </section>
+        <p class="pay-tip"></p>
+      </section>
+      <form action="/Activity/crowdBuy" method="post" id="crowd_buy_active" target="_top">
+        <input type="hidden" name="item_crowd_id" value="">
+        <input type="hidden" name="participate_num" value="1">
+        <input type="hidden" name="payment" value="">
+        <input type="hidden" name="avg_price" value="">
+        <input type="hidden" name="is_point_buy" value="">
+      </form>
+      <section class="actions bdbox clearfix">
+        <a href="javascript:;" class="fl btn-next bdbox j-buyNow buyNow" target="_parent">确定</a>
+        <!--end 立即购买 -->
+      </section>
+    </section>
+    <!-- sku弹窗 -->
+    <section class="j-close-popupSKU"></section>
+    <!-- end popup sku -->
+    <!-- 20200402 -->
+  
+    <!-- 扫码领红包弹窗 -->
+      <input type="hidden" name="" id="storeHideMobile" value="0">
+  
+    
+  
+    <!-- 附近门店模版  -->
+    <script type="text/j-template" id="tpl_nearby_stores">
+      <% _.each(dataset,function(item){ %>
+      <li class="storeItem">
+          <a href="<%= item.link %>" class="storeItemLink">
+              <div class="store_logo">
+                  <span class="logo-box">
+                      <% if(item.imgdir){ %>
+                          <img src="<%= item.imgdir %>" alt="">
+                          <% }else{ %>
+                          <img src="/PublicMob/images/stores.png" alt="">
+                      <% } %>
+                  </span>
+              </div>
+              <div class="store_info">
+                  <p class="store_name ell"><%= item.shop_name %></p>
+                  <p class="store_addr ell"><%= item.area %><br/><%= item.address %></p>
+              </div>
+              <div class="store_cell tb-cell">
+                  <span>进店<i>＞</i></span>
+                  <p class="distance"><%= item.distance %> km</p>
+              </div>
+          </a>
+  
+          <div class="store_btn ">
+              <div class="w50 btn-item">
+                  <a href="javascript:void(0);" class="icon_location_link link1" data-latitude="<%= item.latitude %>" data-longitude="<%= item.longitude %>"
+                     data-shopname="<%= item.shop_name %>" data-address="<%= item.address %>">查看地图</a>
+              </div>
+              <div class="w50 btn-item">
+                  <a href="tel:<%= item.mobile %>" class="link2">联系服务顾问</a>
+              </div>
+          </div>
+      </li>
+  
+      <%})%>
+  </script>
+    <!-- 会员下单后悬浮提示访客 -->
+    <script type="text/j-template" id="tpl_tip_visitors">
+      <section class="tip_visitors" id="tip_vi">
+          <img src="<%= data.headimgurl %>"/>
+          <p>
+              <i>
+              <% if(data.type == 1) {%>
+                  最新订单来自
+              <% } else if (data.type == 2) { %>
+                  最新评价来自
+              <% } %>
+              </i>
+              <span class="textFlow"><%= data.nickname %></span>
+              <% if(data.type == 3 && data.alias) {%>
+                  成为 <%= data.alias %>
+              <% } else if (data.type == 4 && data.alias) { %>
+                  成为 <%= data.alias %>
+              <% } else if (data.type == 5 && data.alias) { %>
+                  成为 <%= data.alias %>
+              <% } %>
+              <i>，<%= data.time %>之前</i>
+          </p>
+      </section>
+  </script>
+    <script src="/PublicMob/js/dist/lib-min.js?v=202005131221223201223"></script>
+  
+    
+    <!-- 防止触发微信规则 页头标题替换公共方法start-->
+    <script>
+      var WxTitleReplace = function (page_title) {
+        var $body = $('body');
+        // hack在微信等webview中无法修改document.title的情况
+        var $iframe = $('<iframe src="/PublicMob/images/iframe_change_title.gif" style="display:none"></iframe>').on('load', function () {
+          setTimeout(function () {
+            $iframe.off('load').remove();
+          }, 0)
+        }).appendTo($body);
+        if (page_title) $(document).attr("title", page_title); // 页面标题
+      }
+  
+      var user_id = '0';
+    </script>
+    <!-- end -->
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+    <!-- <script src="https://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script> -->
+    <script>
+      var Fenbot_sendDefaultApiInfo = true;//传输默认的用户数据到微聊
+      var global_is_preview = '1';
+      var global_spsBtn_isShow = true;//是否显示按钮
+      var global_cart_isShow = true;//是否显示购物车
+      var global_cartPageUrl = "/Item/cart/ZTG/P0yfN3/sid/2020471.html?pid=0";//购物车页面地址
+      var global_cartAjaxUrl = "/Shop/getCartNum";//购物车数据请求地址
+      var global_appdown_isShow = false;//是否显示app下载顶部条
+      var global_appdown_autoHideTime = "";//app下载顶部条自动隐藏时间
+      var global_showcr = '';
+      var global_wechat_getWxConfigUrl = "/Shop/getWxConfig";
+      var global_wechat_debug = false;
+      var selfShareHandle = false;
+      var global_wechat_shareOpentions = {
+        title: "凌伟商贸",   // 标题
+        desc: "凌伟商贸是西北一家大的商超口腔护理供应商，主营口腔护理产品，牙刷、牙膏、牙线、漱口水等产品的销售和批发，品牌有：舒客、高露洁、黑人、三笑、佳洁士、怡雪、555、青蛙、云南白药等产品，欢迎广大用户选购，专业品质，正品保证。",    // 描述
+        link: "http://m2.wxfenxiao.com/Shop/index/TQRQ/4Oaoi/sid/2020471.html?pid=0&amp;is_priview=1",     // 链接
+        imgUrl: "http://img.wxfenxiao.com/2020471/2016-01/568b200d756ff.jpg",    // 图标
+        success: function () {
+          // 用户确认分享后执行的回调函数
+          var location_link = "http://m2.wxfenxiao.com/Shop/index/TQRQ/4Oaoi/sid/2020471.html?pid=0&amp;is_priview=1";
+          if (location_link.indexOf('Bargin/detail') !== false) {
+            window.location.href = location_link;
+          }
+        },
+      };
+  
+      var INAPP = false;
+      // console.log(global_wechat_shareOpentions)
+      
+    </script>
+    <!-- 分销商业绩统计页面不加载datePicker.js -->
+    <script src="/PublicMob/plugins/datePicker/datePicker.js?v=202005131221223201223"></script>  <script src="/PublicMob/plugins/layzr/layzr.min.js?v=202005131221223201223"></script>
+    <script src="/PublicMob/js/dist/cbb_jssdk.js?v=202005131221223201223"></script>
+    <script src="/PublicMob/js/dist/Public/selectGoodsAddCart.js?v=202005131221223201223"></script>
+    <script src="/PublicMob/js/dist/main.js?v=202005131221223201223"></script>
+  
+    <!--<script src="/PublicMob/js/dist/wfxback.js?v=202005131221223201223"></script>-->  <script src="/PublicMob/js/dist/User/module_verifyPhone.js?v=202005131221223201223"></script>
+  
+    <script>
+      //拼团
+            var isDev = false;//是否开发模式
+      var isShowOrderTip = "";//是否显示下单提示
+  
+          // 会员中心浮层其它数据
+      var userCenter_data = {
+        url_wait_total: "/mb/order/order-lists?sid=2020471&pid=0&type=2",
+        url_pay_total: "/mb/order/order-lists?sid=2020471&pid=0&type=3",
+        url_send_total: "/mb/order/order-lists?sid=2020471&pid=0&type=4",
+        url_return_total: "/mb/order/order-lists?sid=2020471&pid=0&type=5",
+        url_allorder: "/mb/order/order-lists?sid=2020471&pid=0&type=1",
+        url_wdyj: "/User/my_commission/rQb/PwpER/sid/2020471.html?pid=0",
+        url_jf: "/mb/user/point?sid=2020471&pid=0",
+        url_yhq: "/mb/user/mycoupon?sid=2020471&pid=0",
+        url_hyhd: "/mb/marketGame/game-list?sid=2020471&pid=0"
+      };
+      
+      var is_open_follow = false;
+      var isNeedAddress = ''; //添加地址变量
+      //系统提示
+      $(function () {
+                });
+    </script>
+  
+    
+      <!-- 腾讯地图api start -->
+  <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&amp;key=WJLBZ-BYRCW-WYTRL-OYLXL-QWWIH-P3F2J"></script><script src="https://mapapi.qq.com/jsapi_v2/2/4/132/main.js" type="text/javascript"></script>
+  <script type="text/javascript" src="https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script>
+  <!-- 腾讯地图api end-->
+  <!-- 高德地图api start -->
+  <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.3&amp;key=552f0986c98fa36d395d95d52f3e9706"></script>
+  <!-- 高德地图api end-->
+  
+      <script src="./assets/js/lingwei/swipe.js?v=202005131221223201223"></script>
+      <script src="./assets/js/lingwei/index_comm.js?v=202005131221223201223"></script>
+  
+  
+      <!-- acp设置脚本代码 -->
+      <!-- 右侧网站挂件功能 -->
+    <script>
+          //设置session
+      function setSession(cname, cvalue) {
+        sessionStorage.setItem(cname, cvalue);
+      };
+  
+      //获取session
+      function getSession(cname) {
+        return sessionStorage.getItem(cname);
+      };
+  
+      var sideWidget = $("#sideWidget"),
+        $sidedown = $(".j-sidedown");
+      var isShowSide = getSession("isShowSide");
+      $(".j-sidedown").click(function () {
+        sideWidget.css("right", "0px");
+        $sidedown.css("right", "-40px");
+        setSession("isShowSide", true);
+      });
+      $(".j-sideup").click(function () {
+        sideWidget.css("right", "-40px");
+        $sidedown.css("right", "0px");
+        setSession("isShowSide", false);
+      });
+      if (isShowSide == 'true') {
+        sideWidget.css("right", "0px");
+        $sidedown.css("right", "-40px");
+      } else if (isShowSide == 'false') {
+        sideWidget.css("right", "-40px");
+        $sidedown.css("right", "0px");
+      }
+      //悬浮按钮背景色和网站挂件保持一致
+      var menufloat_bg = $('#sideWidget').css('background-color');
+      $('.menu').css('background-color', menufloat_bg);
+    </script>
+    <!-- 返回粉盟直播 -->
+    <script>
+      // 关闭弹框
+      $(document).on("click", ".fm_Closes_Del", function () {
+        $(".fm_live").css("display", "none");
+      });
+      // 详情页是否显示二维码方法
+      var isshowcode = function () { };
+      // 是否是微信端
+      var global_wechat_isInWexin = "";
+    </script>
+  
+    <!-- 自定义活动弹框 -->
+    <script>
+      // 关闭弹框
+      $(document).on("click", ".box_del", function () {
+        $(".diy_active_box").css("display", "none");
+        $(".diy_active_box_shade").hide();
+      });
+    </script>
+  
+    <!-- 首页装修组件活动商品加入购物车弹出框内 单位变量  start-->
+    <script type="text/javascript">
+      var point_name = "积分";
+    </script>
+    <!-- end -->
+    <!-- 新版会员中心 start-->
+    <script type="text/javascript">
+      var is_open_new_page = "0";
+      // 会员主页链接处理
+      var userUrl='User/index'
+      if(is_open_new_page=="1"){
+          userUrl='/mb/user/member'
+      }
+    </script>
+    <!-- end -->
+    
+  
+  
+  <!-- 20170105 --></body></html>
