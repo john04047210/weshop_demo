@@ -394,6 +394,12 @@ body[data-weui-theme=dark] .page.home .page__bd img {
 .weui-grids .weui-grid.weui-grid-12 {
   width: 25%;
 }
+.weui-grids .weui-grid.weui-grid-15 {
+  width: 20%;
+}
+.weui-grids .weui-grid.weui-grid-4 {
+  width: 50%;
+}
 
 @media only screen and (min-width: 375px) and (min-height:603px) {
   .page.layers .layers__layer {
@@ -625,4 +631,13 @@ body[data-weui-theme=dark] .page.home .page__bd img {
 
 .round-45 {
   border-radius: 90px!important;
+}
+
+.weui-grids-no-border {
+  display: block;
+}
+.weui-grids-no-border .weui-grid-no-border {
+  width:20%;
+  padding-top:5px;
+  display:inline-block;
 }

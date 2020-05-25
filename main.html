@@ -54,14 +54,28 @@
                   <span class="sr-only">Next</span>
                 </a>
               </div><!-- end carousel slide -->
-              <div class="weui-grids">
-                <a href="javascript:void(0)" class="border-0 weui-grid p-1" :class="grids.size==12?'weui-grid-12':''"
-                    @click="show_grid_info(item)"
+              <div class="weui-grids-no-border d-none">
+                <a href="javascript:void(0)"
+                    @click="show_grid_info(item)" class="weui-grid-no-border"
                     v-for="(item, index) in grids.items" :key="index">
-                  <div class="weui-grid__icon weui-grid__icon-l">
+                  <div class="weui-grid__icon weui-grid__icon-l mt-2">
                     <img class="round-45" :src="can_webp?item.icon.webp:item.icon.jpg" :alt="item.title">
                   </div>
-                  <p class="weui-grid__label">{{item.title}}</p>
+                  <p class="weui-grid__label mb-1">{{item.title}}</p>
+                  <span class="weui-dadge" 
+                      style="position: absolute; right: 5px; bottom: -2px;" 
+                      @click.stop="edit_grid_info(item)"
+                      v-if="can_edit">e</span>
+                </a><!-- weui-grid -->
+              </div><!-- weui-grids -->
+              <div class="weui-grids">
+                <a href="javascript:void(0)" class="weui-grid no-border p-1" :class="grids.size==12?'weui-grid-12':''"
+                    @click="show_grid_info(item)" style="padding-top:15px;"
+                    v-for="(item, index) in grids.items" :key="index">
+                  <div class="weui-grid__icon weui-grid__icon-l mt-2">
+                    <img class="round-45" :src="can_webp?item.icon.webp:item.icon.jpg" :alt="item.title">
+                  </div>
+                  <p class="weui-grid__label mb-1">{{item.title}}</p>
                   <span class="weui-dadge" 
                       style="position: absolute; right: 5px; bottom: -2px;" 
                       @click.stop="edit_grid_info(item)"
@@ -249,7 +263,35 @@
               },
               title: '签到有礼',
               target: ''
-            },]
+            },{
+              icon: {
+                webp: './assets/images/huawei_phone_320x320.webp',
+                jpg: './assets/images/huawei_phone_320x320.jpg'
+              },
+              title: '新人专区',
+              target: ''
+            },{
+              icon: {
+                webp: './assets/images/sony_earphone_320x320.webp',
+                jpg: './assets/images/sony_earphone_320x320.jpg'
+              },
+              title: '热销专区',
+              target: ''
+            },{
+              icon: {
+                webp: './assets/images/huawei_phone_320x320.webp',
+                jpg: './assets/images/huawei_phone_320x320.jpg'
+              },
+              title: '特价专区',
+              target: ''
+            },{
+              icon: {
+                webp: './assets/images/sony_earphone_320x320.webp',
+                jpg: './assets/images/sony_earphone_320x320.jpg'
+              },
+              title: '签到有礼',
+              target: ''
+            }]
         }
       },
       methods: {
