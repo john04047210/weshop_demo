@@ -54,20 +54,6 @@
                   <span class="sr-only">Next</span>
                 </a>
               </div><!-- end carousel slide -->
-              <div class="weui-grids-no-border">
-                <a href="javascript:void(0)"
-                    @click="show_grid_info(item)" class="weui-grid-no-border"
-                    v-for="(item, index) in grids.items" :key="index">
-                  <div class="weui-grid__icon weui-grid__icon-l mt-2">
-                    <img class="round-45" :src="can_webp?item.icon.webp:item.icon.jpg" :alt="item.title">
-                  </div>
-                  <p class="weui-grid__label mb-1">{{item.title}}</p>
-                  <span class="weui-dadge" 
-                      style="position: absolute; right: 5px; bottom: -2px;" 
-                      @click.stop="edit_grid_info(item)"
-                      v-if="can_edit">e</span>
-                </a><!-- weui-grid -->
-              </div><!-- weui-grids -->
               <div class="weui-grids">
                 <a href="javascript:void(0)" class="weui-grid no-border p-1" :class="grids.size==12?'weui-grid-12':''"
                     @click="show_grid_info(item)" style="padding-top:15px;"
